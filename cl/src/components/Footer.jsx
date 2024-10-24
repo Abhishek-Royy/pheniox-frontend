@@ -109,7 +109,7 @@ const Footer = () => {
                     href="mailto:help@lorem.com"
                     className="font-Inter text-[14px] font-medium text-gray-400"
                   >
-                    abhishek699.roy@gmail.com
+                    phoenix.co12@gmail.com
                   </a>
                   <p className="font-Inter text-[12px] font-medium text-gray-400">
                     Support Email
@@ -136,7 +136,7 @@ const Footer = () => {
                     href="mailto:help@lorem.com"
                     className="font-Inter text-[14px] font-medium text-gray-400"
                   >
-                    Balurghat, D/Dinajpur, West Bengal, 733145
+                    Barasat, South 24 Pargana, 700124
                   </a>
                   <p className="font-Inter text-[12px] font-medium text-gray-400">
                     Address
@@ -225,7 +225,7 @@ const Footer = () => {
           {/* <hr className="mt-[30px] text-red" /> */}
           <div className="flex items-center justify-center pb-8 pt-[9px] md:py-8">
             <p className="text-[14px] font-normal text-white md:text-[14px]">
-              © Copyright 2024 • All rights Reserved •<a href="https://www.linkedin.com/in/abhishek-roy-4a5244239/" target="_blank"> Pheniox</a>
+              © Copyright 2024 • All rights Reserved •<a href="https://github.com/PhoenixTechCo" target="_blank"> Phoenix Co.</a>
             </p>
           </div>
         </div>
