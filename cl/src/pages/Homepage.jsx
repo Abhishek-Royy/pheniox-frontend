@@ -147,7 +147,7 @@ function Homepage() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
             pariatur voluptas dolores voluptate ex a quidem sapiente?
           </p>
-          <div className="acchivement-card mt-5 flex flex-wrap gap-5 w-full h-auto items-center justify-between">
+          <div className="acchivement-card mt-5 flex flex-wrap gap-5 w-full h-auto items-center justify-center">
             {allAchivements.map((acchivement)=>(
               <motion.div
               whileHover={{ y: -5 }}
