@@ -59,7 +59,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 function Projectpage() {
@@ -96,23 +96,27 @@ function Projectpage() {
 
   return (
     <>
-      <div className="container w-full h-auto md:px-36">
-        <h1 className=" mt-10 text-5xl font-extrabold text-gray-900 text-center mb-8">
-         Our Works
+      <div className="container w-full h-auto">
+        <h1 className=" mt-10 text-5xl font-extrabold text-gray-200 text-center mb-8">
+          Our Works
         </h1>
 
-        <div className="box w-full mx-auto mt-10 items-center justify-center gap-5 flex flex-wrap">
+        <div className="box w-[95%] md:w-full mx-auto mt-10 items-center justify-center gap-5 flex flex-wrap">
           {projectdata.map((item) => (
             <motion.div
               onClick={() => openPopup(item)} // Open popup on project click
               whileHover={{ y: -5 }}
               key={item._id}
-              className="cont w-[300px] h-auto bg-gray-100 p-3 rounded-md shadow-xl cursor-pointer"
+              className="cont border-l md:max-w-[300px] w-full md:max-h-[350px] h-auto bg-gradient-to-r from-black to-purple-900 p-4 rounded-md shadow-xl cursor-pointer"
+              style={{
+                boxShadow:
+                  "rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.85) 0px -2px 6px 0px inset",
+              }}
             >
               <div className="img w-full h-[180px] bg-blue-500">
                 <img className="w-full h-full" src={item.pCoverImage} alt="" />
               </div>
-              <h5 className="text-2xl font-medium mt-2">{item.pTitle}</h5>
+              <h5 className="text-gray-200 text-2xl font-medium mt-2">{item.pTitle}</h5>
             </motion.div>
           ))}
         </div>
@@ -138,7 +142,7 @@ function Projectpage() {
             <h3 className="text-2xl font-medium mt-5">
               {selectedProject.pTitle}
             </h3>
-            <p className="text-sm mt-2">{selectedProject.pdescription}</p>
+            <p className="text-sm  mt-2">{selectedProject.pdescription}</p>
             <div className="flex items-center justify-between mt-5">
               <p className="font-semibold">
                 Project Created By: {selectedProject.pCreatedBy}

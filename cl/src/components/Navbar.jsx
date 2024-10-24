@@ -17,8 +17,8 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav className="  text-black shadow-lg ">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-2">
+    <motion.nav className="  bg-gradient-to-b from-black to-gray-800 shadow-lg sticky z-[9999999999999999999999999999] top-0">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-2 ">
         <div className="relative flex items-center justify-between h-20">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
@@ -76,39 +76,39 @@ const Navbar = () => {
               <div className="flex space-x-4">
                 <NavLink
                   to="/"
-                  className="text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                  className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   Home
                 </NavLink>
                 <NavLink
                   to="/about"
-                  className="text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                  className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   About
                 </NavLink>
                 <a
-                href="#services"
-                  className="text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                  href="#services"
+                  className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   Service
                 </a>
                 <a
                   href="#projects"
-                  className="text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                  className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   Projects
                 </a>
 
                 <a
                   href="#team-members"
-                  className="text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                  className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   Team Member
                 </a>
 
                 <NavLink
                   to="/contact"
-                  className="text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                  className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   Contact
                 </NavLink>
@@ -129,37 +129,37 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-8">
           <NavLink
             to="/"
-            className="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
+            className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             Home
           </NavLink>
           <NavLink
             to="/about"
-            className="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
+            className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             About
           </NavLink>
           <a
             href="#services"
-            className="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
+            className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             Service
           </a>
           <a
             href="#projects"
-            className="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
+            className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             Projects
           </a>
           <a
             href="#team-members"
-            className="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
+            className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             Team Member
           </a>
           <NavLink
             to="/contact"
-            className="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
+            className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             Contact
           </NavLink>

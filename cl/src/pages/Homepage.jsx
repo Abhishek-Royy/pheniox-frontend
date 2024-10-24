@@ -70,7 +70,7 @@ function Homepage() {
 
   return (
     <>
-      <div className="main w-full min-h-auto md:px-32 ">
+      <div className="main w-full min-h-auto md:px-32 bg-gradient-to-b from-black to-[#000025] ">
         {/* section-1 */}
         {/* <div className="sec1 md:w-full w-[95%] mx-auto md:h-[90vh] md:flex md:pt-0 pt-20">
           <div className="sec1-left w-full md:w-1/2 h-full  flex items-start flex-col justify-center">
@@ -106,14 +106,14 @@ function Homepage() {
 
         <div className="sec1 md:w-full w-[95%] mx-auto md:h-[90vh] md:flex md:pt-0 pt-20">
           <div className="sec1-left w-full md:w-1/2 h-full  flex items-start flex-col justify-center">
-            <h1 className="md:text-6xl text-5xl font-bold">
+            <h1 className="md:text-6xl text-5xl font-bold text-white">
               {slides[currentSlide].heading}
               <span className="text-[#C6AE32]">
                 {" "}
                 {slides[currentSlide].highlight}
               </span>
             </h1>
-            <h2 className="md:text-xl text-lg font-medium mt-5">
+            <h2 className="md:text-xl text-lg font-medium mt-5 text-white">
               {slides[currentSlide].subheading}
             </h2>
             <button
@@ -140,26 +140,44 @@ function Homepage() {
 
         {/* section-2 */}
         <div className="sec2 md:w-full w-[95%] mx-auto h-auto  pb-5 md:mt-0 mt-20">
-          <h1 className="text-center md:text-5xl text-4xl font-extrabold mb-8">
+          <h1 className="text-center md:text-5xl text-4xl font-extrabold mb-8 text-white">
             Our Acchivements
           </h1>
-          <p className="text-center  mb-12">
+          <p className="text-center text-gray-400  mb-12">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
             pariatur voluptas dolores voluptate ex a quidem sapiente?
           </p>
           <div className="acchivement-card mt-5 flex flex-wrap gap-5 w-full h-auto items-center justify-center">
+            
+              {/* <motion.div
+              whileHover={{ y: -5 }}
+              className="block md:max-w-[300px] w-full max-h-[350px] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-200 dark:border-gray-200 dark:hover:bg-gray-300"
+            >
+                <div className="img w-full h-[180px] bg-blue-500">
+                <img className="w-full h-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ7rOGMTsdCqguYg022QLn3-JUevJOzG-F-A&s" alt="" />
+              </div>
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
+                10+ website
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-800">
+               Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+              </p>
+            </motion.div> */}
+             
+          
             {allAchivements.map((acchivement)=>(
               <motion.div
               whileHover={{ y: -5 }}
-              className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-200 dark:border-gray-200 dark:hover:bg-gray-300"
+              className="block md:max-w-[300px] w-full md:max-h-[350px] h-auto p-6  rounded-lg border  hover:bg-gray-100 bg-gradient-to-t from-black to-purple-800 "
+             
             >
                 <div className="img w-full h-[180px] bg-blue-500">
                 <img className="w-full h-full" src={acchivement.aImage} alt="" />
               </div>
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
+              <h5 className="my-2 text-2xl font-bold tracking-tight text-gray-100 dark:text-white">
                 {acchivement.aTitle}
               </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-800">
+              <p className="font-normal w-full overflow-hidden text-ellipsis whitespace-nowrap text-gray-200 dark:text-gray-300">
                {acchivement.aDescription}
               </p>
             </motion.div>

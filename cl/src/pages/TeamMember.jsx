@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 
 function TeamMember() {
-  const [members, setMembers] = useState([]); 
+  const [members, setMembers] = useState([]);
   const [selectedMember, setSelectedMember] = useState(null);
 
   // Function to fetch team member data
@@ -12,19 +12,18 @@ function TeamMember() {
       const response = await axios.get(
         "https://phoenixbackendapi.onrender.com/api/v1/team/teammembers"
       );
-      setMembers(response.data.message); 
+      setMembers(response.data.message);
       console.log(members);
     } catch (error) {
       console.log("Error fetching team member data", error);
     }
   };
 
-
   useEffect(() => {
     fetchedTeamMemberData();
   }, []);
 
-  // Function to open the modal 
+  // Function to open the modal
   const openModal = (member) => {
     setSelectedMember(member);
   };
@@ -36,27 +35,28 @@ function TeamMember() {
 
   return (
     <div className="py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-5xl font-extrabold text-gray-900 text-center mb-8">
+      <div className="md:max-w-full w-[95%] mx-auto  ">
+        <h1 className="text-5xl font-extrabold text-gray-200 text-center mb-8">
           Our Team
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {members.map((member) => (
             <motion.div
               whileHover={{ y: -5 }}
               key={member._id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden p-6 text-center cursor-pointer"
+              className="bg-gradient-to-b from-black to-[#420658df] rounded-lg overflow-hidden p-6 text-center cursor-pointer"
               onClick={() => openModal(member)}
+              style={{ boxShadow: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px" }}
             >
               <img
-                className="w-24 h-24 rounded-full mx-auto"
+                className="w-24 h-24 rounded-full mx-auto transition-transform transform hover:scale-110"
                 src={member.Avatar}
                 alt={member.name}
               />
-              <h3 className="mt-4 text-lg font-medium text-gray-900">
+              <h3 className="mt-4 text-lg font-medium text-gray-100">
                 {member.Name}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-300">
                 {member.RoleInCompany}
               </p>
             </motion.div>
@@ -80,7 +80,6 @@ function TeamMember() {
                 alt={selectedMember.Name}
               />
               <h3 className="mt-4 text-2xl font-bold">{selectedMember.Name}</h3>
-             
             </div>
             <div className="mb-4">
               <h4 className="text-xl font-semibold">About</h4>
@@ -102,7 +101,6 @@ function TeamMember() {
                   </li>
                 ))}
               </ul>
-    
             </div>
             <div>
               <h4 className="text-xl font-semibold">Role in Company</h4>
