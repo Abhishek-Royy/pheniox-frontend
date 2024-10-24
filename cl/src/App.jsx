@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -13,10 +13,30 @@ import AdminSignup from "./pages/admin/AdminSignup";
 // import TeamMember from "./pages/TeamMember";
 import Notfound from "./pages/Notfound";
 
+import Preloader from "./components/Preloader";
+
+
 
 function App() {
+
+  const [loading, setLoading] = useState(true); // State for loading
+
+  // Simulate content loading (e.g., fetch from API)
+  useEffect(() => {
+    // Simulate loading delay for demonstration purposes (replace with actual content loading logic)
+    const loadContent = setTimeout(() => {
+      setLoading(false); // Set loading to false when content is loaded
+    }, 2000); // Simulated loading time of 2 seconds
+
+    return () => clearTimeout(loadContent);
+  }, []);
+
   return (
     <>
+
+{loading ? ( // Display the Preloader when loading
+        <Preloader />
+      ) : (
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -38,6 +58,7 @@ function App() {
         </Routes>
         <Footer/>
       </BrowserRouter>
+       )}
     </>
   );
 }

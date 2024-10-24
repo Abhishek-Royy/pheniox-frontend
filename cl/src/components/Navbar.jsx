@@ -80,12 +80,12 @@ const Navbar = () => {
                 >
                   Home
                 </NavLink>
-                <NavLink
-                  to="/about"
+                <a
+                  href="#about"
                   className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   About
-                </NavLink>
+                </a>
                 <a
                   href="#services"
                   className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
@@ -106,12 +106,12 @@ const Navbar = () => {
                   Team Member
                 </a>
 
-                <NavLink
-                  to="/contact"
+                <a
+                  href="#contact"
                   className="text-gray-200  px-3 py-2 rounded-md text-lg font-medium"
                 >
                   Contact
-                </NavLink>
+                </a>
               </div>
             </div>
           </div>
@@ -133,12 +133,12 @@ const Navbar = () => {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/about"
+          <a
+            href="#about"
             className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             About
-          </NavLink>
+          </a>
           <a
             href="#services"
             className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
@@ -157,12 +157,12 @@ const Navbar = () => {
           >
             Team Member
           </a>
-          <NavLink
-            to="/contact"
+          <a
+            href="#contact"
             className="text-gray-200 hover:bg-gray-700 hover:text-white block px-3 py-4 rounded-md text-xl font-medium"
           >
             Contact
-          </NavLink>
+          </a>
         </div>
       </motion.div>
     </motion.nav>

@@ -43,7 +43,7 @@ function Homepage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [slides.length]);
@@ -148,8 +148,7 @@ function Homepage() {
             pariatur voluptas dolores voluptate ex a quidem sapiente?
           </p>
           <div className="acchivement-card mt-5 flex flex-wrap gap-5 w-full h-auto items-center justify-center">
-            
-              {/* <motion.div
+            {/* <motion.div
               whileHover={{ y: -5 }}
               className="block md:max-w-[300px] w-full max-h-[350px] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-200 dark:border-gray-200 dark:hover:bg-gray-300"
             >
@@ -163,27 +162,27 @@ function Homepage() {
                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
               </p>
             </motion.div> */}
-             
-          
-            {allAchivements.map((acchivement)=>(
+
+            {allAchivements.map((acchivement) => (
               <motion.div
-              whileHover={{ y: -5 }}
-              className="block md:max-w-[300px] w-full md:max-h-[350px] h-auto p-6  rounded-lg border  hover:bg-gray-100 bg-gradient-to-t from-black to-purple-800 "
-             
-            >
+                whileHover={{ y: -5 }}
+                className="block md:max-w-[300px] w-full md:max-h-[350px] h-auto p-6  rounded-lg border  hover:bg-gray-100 bg-gradient-to-t from-black to-purple-800 "
+              >
                 <div className="img w-full h-[180px] bg-blue-500">
-                <img className="w-full h-full" src={acchivement.aImage} alt="" />
-              </div>
-              <h5 className="my-2 text-2xl font-bold tracking-tight text-gray-100 dark:text-white">
-                {acchivement.aTitle}
-              </h5>
-              <p className="font-normal w-full overflow-hidden text-ellipsis whitespace-nowrap text-gray-200 dark:text-gray-300">
-               {acchivement.aDescription}
-              </p>
-            </motion.div>
+                  <img
+                    className="w-full h-full"
+                    src={acchivement.aImage}
+                    alt=""
+                  />
+                </div>
+                <h5 className="my-2 text-2xl font-bold tracking-tight text-gray-100 dark:text-white">
+                  {acchivement.aTitle}
+                </h5>
+                <p className="font-normal w-full overflow-hidden text-ellipsis whitespace-nowrap text-gray-200 dark:text-gray-300">
+                  {acchivement.aDescription}
+                </p>
+              </motion.div>
             ))}
-            
-            
           </div>
         </div>
 
