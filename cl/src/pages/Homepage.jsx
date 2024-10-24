@@ -106,9 +106,15 @@ function Homepage() {
 
         <div className="sec1 md:w-full w-[95%] mx-auto md:h-[90vh] md:flex md:pt-0 pt-20">
           <div className="sec1-left w-full md:w-1/2 h-full  flex items-start flex-col justify-center">
-            <h1 className="md:text-6xl text-5xl font-bold text-white">
+            <h1
+              className="md:text-6xl text-5xl font-bold text-white"
+              style={{ fontFamily: '"Oxanium", sans-serif' }}
+            >
               {slides[currentSlide].heading}
-              <span className="text-[#C6AE32]">
+              <span
+                className="text-[#C6AE32]"
+                style={{ fontFamily: '"Oxanium", sans-serif' }}
+              >
                 {" "}
                 {slides[currentSlide].highlight}
               </span>
