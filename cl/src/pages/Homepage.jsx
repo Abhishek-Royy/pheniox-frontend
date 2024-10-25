@@ -5,6 +5,7 @@ import axios from "axios";
 import Projectpage from "./Projectpage";
 import TeamMember from "./TeamMember";
 import Servicepage from "./Servicepage";
+import Aboutpage from "./Aboutpage";
 
 function Homepage() {
   const slides = [
@@ -70,7 +71,7 @@ function Homepage() {
 
   return (
     <>
-      <div className="main w-full min-h-auto md:px-32 bg-gradient-to-b from-black to-[#000025] ">
+      <div className="main w-full min-h-auto  bg-gradient-to-b from-black to-[#000025] ">
         {/* section-1 */}
         {/* <div className="sec1 md:w-full w-[95%] mx-auto md:h-[90vh] md:flex md:pt-0 pt-20">
           <div className="sec1-left w-full md:w-1/2 h-full  flex items-start flex-col justify-center">
@@ -104,9 +105,15 @@ function Homepage() {
           </div>
         </div> */}
 
-        <div className="sec1 md:w-full w-[95%] mx-auto md:h-[90vh] md:flex md:pt-0 pt-20">
-          <div className="sec1-left w-full md:w-1/2 h-full  flex items-start flex-col justify-center">
-            <h1
+        <div className="sec1 md:w-full w-[95%] md:px-32 mx-auto md:h-[90vh] md:flex md:pt-0 pt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, staggerChildren: 0.5 }}
+            className="sec1-left w-full md:w-1/2 h-full  flex items-start flex-col justify-center"
+          >
+            <motion.h1
+              transition={{ duration: 2 }}
               className="md:text-6xl text-5xl font-bold text-white"
               style={{ fontFamily: '"Oxanium", sans-serif' }}
             >
@@ -118,34 +125,50 @@ function Homepage() {
                 {" "}
                 {slides[currentSlide].highlight}
               </span>
-            </h1>
-            <h2 className="md:text-xl text-lg font-medium mt-5 text-white">
+            </motion.h1>
+            <motion.h2
+              transition={{ duration: 2 }}
+              className="md:text-xl text-lg font-medium mt-5 text-white"
+            >
               {slides[currentSlide].subheading}
-            </h2>
-            <button
+            </motion.h2>
+            <motion.button
+              transition={{ duration: 2 }}
               type="button"
               className="mt-5 md:block hidden  text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br  font-medium rounded-lg md:text-sm text-lg px-10 py-3.5 text-center me-2 mb-2"
             >
               {slides[currentSlide].buttonText}
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              transition={{ duration: 2 }}
               type="button"
               className="mt-5 md:hidden visible  w-full text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br  font-medium rounded-lg md:text-sm text-lg px-10 py-3.5 text-center me-2 mb-2"
             >
               {slides[currentSlide].buttonText}
-            </button>
-          </div>
-          <div className="sec1-right md:w-1/2 h-full flex items-center md:justify-end justify-center md:mt-0 mt-10">
+            </motion.button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 150 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 2, staggerChildren: 0.5 }}
+            className="sec1-right md:w-1/2 h-full flex items-center md:justify-end justify-center md:mt-0 mt-10"
+          >
             <img
               className="w-[90%] h-full object-contain"
               src={slides[currentSlide].imgSrc}
               alt="slider image"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* section-2 */}
-        <div className="sec2 md:w-full w-[95%] mx-auto h-auto  pb-5 md:mt-0 mt-20">
+        <div
+          className="sec2 md:w-full w-[95%] mx-auto h-auto pb-5 md:mt-0 mt-20 py-10"
+          style={{
+            background:
+              "url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9722.jpg')",backgroundPosition:"center"
+          }}
+        >
           <h1 className="text-center md:text-5xl text-4xl font-extrabold mb-8 text-white">
             Our Acchivements
           </h1>
@@ -172,7 +195,7 @@ function Homepage() {
             {allAchivements.map((acchivement) => (
               <motion.div
                 whileHover={{ y: -5 }}
-                className="block md:max-w-[300px] w-full md:max-h-[350px] h-auto p-6  rounded-lg border  hover:bg-gray-100 bg-gradient-to-t from-black to-purple-800 "
+                className="block md:max-w-[300px] w-full md:max-h-[350px] h-auto p-6  rounded-lg border  hover:bg-[#31cbff72] bg-[#ffffff2b]"
               >
                 <div className="img w-full h-[180px] bg-blue-500">
                   <img
@@ -194,7 +217,13 @@ function Homepage() {
 
         {/* -------------------------------------------------------------------------------- */}
 
-        <div id="services" className="mt-14">
+        <div id="#about" className="mt-14">
+          <Aboutpage />
+        </div>
+
+        {/* -------------------------------------------------------------------------------- */}
+
+        <div id="services" className="mt-14 md:px-32 py-10">
           <Servicepage />
         </div>
 
@@ -204,7 +233,7 @@ function Homepage() {
         </div>
 
         {/* ----------------------------------------------------------------------------------- */}
-        <div id="team-members" className="mt-14">
+        <div id="team-members" className="mt-14 md:px-32">
           <TeamMember />
         </div>
       </div>
