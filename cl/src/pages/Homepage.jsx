@@ -55,7 +55,7 @@ function Homepage() {
   const fetchAchievements = async () => {
     try {
       const response = await axios.get(
-        "https://phoenixbackendapi.onrender.com/api/v1/achivements/achivements"
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/achivements/achivements`
       );
       setallAchivements(response.data.message);
       console.log(allAchivements);
@@ -166,7 +166,8 @@ function Homepage() {
           className="sec2 md:w-full w-[95%] mx-auto h-auto pb-5 md:mt-0 mt-20 py-10"
           style={{
             background:
-              "url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9722.jpg')",backgroundPosition:"center"
+              "url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9722.jpg')",
+            backgroundPosition: "center",
           }}
         >
           <h1 className="text-center md:text-5xl text-4xl font-extrabold mb-8 text-white">

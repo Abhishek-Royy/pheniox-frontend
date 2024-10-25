@@ -117,7 +117,6 @@
 
 // export default TeamMember;
 
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -130,7 +129,7 @@ function TeamMember() {
   const fetchedTeamMemberData = async () => {
     try {
       const response = await axios.get(
-        "https://phoenixbackendapi.onrender.com/api/v1/team/teammembers"
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/team/teammembers`
       );
       setMembers(response.data.message);
     } catch (error) {
@@ -184,7 +183,9 @@ function TeamMember() {
           </div>
           <div className="mb-4">
             <h4 className="text-xl font-semibold">About</h4>
-            <p className="mt-2 text-gray-700">{About || "No information available."}</p>
+            <p className="mt-2 text-gray-700">
+              {About || "No information available."}
+            </p>
           </div>
           <div className="mb-4">
             <h4 className="text-xl font-semibold">Educational Background</h4>
@@ -209,7 +210,9 @@ function TeamMember() {
           </div>
           <div>
             <h4 className="text-xl font-semibold">Role in Company</h4>
-            <p className="mt-2 text-gray-700">{RoleInCompany || "Not specified."}</p>
+            <p className="mt-2 text-gray-700">
+              {RoleInCompany || "Not specified."}
+            </p>
           </div>
         </div>
       </div>

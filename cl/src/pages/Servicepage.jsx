@@ -14,7 +14,7 @@ function Servicepage() {
   const fetchServerData = async () => {
     try {
       const response = await axios.get(
-        "https://phoenixbackendapi.onrender.com/api/v1/service/services"
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/service/services`
       );
       setServices(response.data.message);
       console.log(services);
@@ -56,10 +56,10 @@ function Servicepage() {
     y.set(yPct);
   };
 
-  const handelMouseLeave=()=>{
+  const handelMouseLeave = () => {
     x.set(0);
     y.set(0);
-  }
+  };
 
   return (
     <div className="h-auto px-2">

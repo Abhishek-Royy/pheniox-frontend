@@ -70,7 +70,7 @@ function Projectpage() {
   const fetchProjectFromBackend = async () => {
     try {
       const response = await axios.get(
-        "https://phoenixbackendapi.onrender.com/api/v1/projects/projects"
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/projects/projects`
       );
       setProjectdata(response.data.message); // Update state with fetched data
     } catch (err) {
@@ -116,7 +116,9 @@ function Projectpage() {
               <div className="img w-full h-[180px] bg-blue-500">
                 <img className="w-full h-full" src={item.pCoverImage} alt="" />
               </div>
-              <h5 className="text-gray-200 text-2xl font-medium mt-2">{item.pTitle}</h5>
+              <h5 className="text-gray-200 text-2xl font-medium mt-2">
+                {item.pTitle}
+              </h5>
             </motion.div>
           ))}
         </div>
